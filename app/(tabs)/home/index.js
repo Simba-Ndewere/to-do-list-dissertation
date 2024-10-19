@@ -1,7 +1,6 @@
-import { Pressable, StyleSheet, Text, View, Image } from 'react-native';
+import { Pressable, StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import React from 'react';
 import AntDesign from '@expo/vector-icons/AntDesign';
-import { ScrollView } from 'react-native-web';
 
 
 const index = () => {
@@ -54,15 +53,19 @@ const index = () => {
       <ScrollView style={{ flex: 1, backgroundColor: "white" }}>
         <View style={{ padding: 10 }}>
           {todos?.length > 0 ? (
-            <View> </View>
+            <View></View>
           ) : (
-            <View>
+            <View style={{flex:1,justifyContent:"center", alignItems:"center",marginTop:130,marginLeft:"auto",marginRight:"auto"}}>
               <Image
                 style={{ width: 200, height: 200, resizeMode: "contain" }}
                 source={{
                   uri: "https://cdn-icons-png.flaticon.com/128/2387/2387679.png",
                 }}
               />
+              <Text style={{ fontSize: 16, marginTop: 15, fontWeight: "600", textAlign: "center" }}>No Tasks for today! add a task</Text>
+              <Pressable style={{marginTop:15}}>
+                <AntDesign name="pluscircle" size={30} color="#007FFF" />
+              </Pressable>
             </View>
           )}
         </View>
