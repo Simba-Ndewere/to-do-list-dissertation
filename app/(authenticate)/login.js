@@ -6,6 +6,7 @@ import {
     KeyboardAvoidingView,
     TextInput,
     Pressable,
+    Image
 } from 'react-native'
 import React, { useState } from 'react'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
@@ -16,18 +17,32 @@ const login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter();
+    const imageSource = require('./assets/bnu.jpg');
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: "white", alignItems: "center" }}>
-            <View style={{ marginTop: 100 }}>
-                <Text style={{ fontSize: 16, fontWeight: "600", color: "#0066b2" }}>BNU TODO-LIST</Text>
+            <View style={{ marginTop: 20 }}>
+                <Text style={{ fontSize: 16, fontWeight: "600", color: "#0066b2" }}>TODO-LIST</Text>
+            </View>
+            <View style={{
+                justifyContent: "center",
+                alignItems: "center",
+                marginLeft: "auto",
+                marginRight: "auto",
+                height: 250
+            }}>
+                <Image
+                    source={imageSource}
+                    style={{
+                        width: 200,
+                        height: 200,
+                        resizeMode: "contain"
+                    }}
+                />
             </View>
             <KeyboardAvoidingView>
-                <View style={{ alignItems: "center" }}>
-                    <Text style={{ fontSize: 16, fontWeight: "600", marginTop: 20 }}>Log in to your account</Text>
-                </View>
 
-                <View style={{ marginTop: 70 }}>
+                <View style={{}}>
                     <View
                         style={{
                             flexDirection: "row",
